@@ -1,5 +1,5 @@
 package com.tcs.arrays;
-
+// https://takeuforward.org/data-structure/rotate-array-by-k-elements-block-swap-algorithm/
 import java.util.Arrays;
 
 public class RotateArray {
