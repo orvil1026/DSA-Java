@@ -1,8 +1,10 @@
 package com.patterns;
 
+import java.sql.SQLOutput;
+
 public class Pattern2 {
     public static void main(String[] args) {
-        pattern5(11);
+        pattern5ApproachSecond(5);
     }
 
 
@@ -57,6 +59,16 @@ public class Pattern2 {
         }
         for(int row=(n/2)+2; row<=n; row++){
             for(int col=0; col< n-row+1; col++ ){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern5ApproachSecond(int n){
+        for(int row=1; row<=n * 2; row++){
+            int noOfStarsInCol = row > n ? 2*n-(row) : row;
+            for(int col=0; col< noOfStarsInCol; col++){
                 System.out.print("* ");
             }
             System.out.println();
