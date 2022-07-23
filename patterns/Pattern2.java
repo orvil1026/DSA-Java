@@ -4,7 +4,7 @@ import java.sql.SQLOutput;
 
 public class Pattern2 {
     public static void main(String[] args) {
-        pattern5ApproachSecond(5);
+        pattern17(5);
     }
 
 
@@ -73,5 +73,53 @@ public class Pattern2 {
             }
             System.out.println();
         }
+    }
+
+    static void pattern28(int n){
+        for(int row=1; row< n*2; row++){
+            int noOfStarsInCol = row > n ? (2*n)-row : row;
+            for(int spaces=1; spaces <= Math.abs(n-row); spaces++){
+                System.out.print(" ");
+            }
+            for(int col=1; col<=noOfStarsInCol; col++ ){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern30(int n){
+
+        for(int row=1; row<=n; row++){
+            for(int spaces=1; spaces<= 2*((n-row+1)-1); spaces++){
+                System.out.print(" ");
+            }
+            for(int col=row; col>0; col--){
+                System.out.print(col+" ");
+            }
+            for(int col=2; col<=row; col++){
+                System.out.print(col+" ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void pattern17(int n){
+
+        for(int row=1; row<n*2; row++){
+            int rowCorrection = row > n ? (2*n)-row : row;
+            for(int spaces=1; spaces<= 2*((n-rowCorrection+1)-1); spaces++){
+                System.out.print(" ");
+            }
+            for(int col=rowCorrection; col>0; col--){
+                System.out.print(col+" ");
+            }
+            for(int col=2; col<=rowCorrection; col++){
+                System.out.print(col+" ");
+            }
+            System.out.println();
+        }
+
     }
 }
