@@ -4,7 +4,7 @@ import java.sql.SQLOutput;
 
 public class Pattern2 {
     public static void main(String[] args) {
-        pattern17(5);
+        pattern31(4);
     }
 
 
@@ -121,5 +121,17 @@ public class Pattern2 {
             System.out.println();
         }
 
+    }
+
+    static void pattern31(int n){
+        int orignaln = n;
+        n = 2 * n;
+        for(int row=0; row<=n; row++){
+            for(int col=0; col<=n; col++){
+                int mindistance = orignaln - Math.min(Math.min(row,col),Math.min(n-row,n-col));
+                System.out.print(mindistance+" ");
+            }
+            System.out.println();
+        }
     }
 }
