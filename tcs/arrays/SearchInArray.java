@@ -4,6 +4,7 @@ public class SearchInArray {
     public static void main(String[] args) {
         int[] array = {1,2,3,4,5};
         System.out.println(binarySearch(array, 3));
+
     }
     static int binarySearch(int [] arr, int target){
         int start = 0;
