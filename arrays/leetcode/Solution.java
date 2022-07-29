@@ -1,45 +1,58 @@
 package com.arrays.leetcode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 class Solution {
+
     public static void main(String[] args) {
-        int[] arr1 = {4,9,5};
-        int[] arr2 = {9,4,9,8,4};
-        System.out.println(Arrays.toString(intersection(arr1, arr2)));
+        int[] numbers = {-1,0};
+        int[] nums = {-3,3,4,90};
+        System.out.println(Arrays.toString(twoSum(numbers,-1)));
+        System.out.println(binarySearch(numbers,-1));
     }
+    static int[] twoSum(int[] numbers, int target) {
 
+        int result[] = new int[2] ;
+        int end = binarySearch(numbers, target);
+        System.out.print(end);
 
-    static int[] intersection(int[] nums1, int[] nums2) {
-        
-        ArrayList<Integer> result = new ArrayList<>();
-        
-        for(int i=0; i<nums1.length; i++){
-            if(linearSearch(nums2, nums1[i])){
-                if(!result.contains(nums1[i])){
-                    result.add(nums1[i]);
+        for (int i = 0; i<= end ; i ++){
+            for(int j = i+1; j <= end; j++){
+                if(numbers[i] + numbers[j] == target && i!=j){
+
+                    result[0] = i + 1;
+                    result[1] = j + 1;
+
+                    return result;
                 }
+
             }
         }
-        
-        int[] fin_result = new int[result.size()];
-        
-        for(int i=0; i < fin_result.length ; i++){
-            fin_result[i] = result.get(i);
-        }
-        
-        return fin_result;
-        
-    }
-    
-    static boolean linearSearch(int[] arr, int target){
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == target){
-                return true;
-            }
-        }
-        return false;
+
+        return result;
+
+
+
     }
 
+    static int binarySearch(int[] numbers, int target){
+        int start = 0;
+        int end = numbers.length - 1 ;
+
+
+
+        while(start<=end){
+            int mid = start + (end - start)/2;
+
+            if(target < numbers[mid]){
+                end = mid - 1;
+            }else if(target > numbers[mid]){
+                start = mid + 1;
+            }else{
+                return mid;
+            }
+        }
+
+        return end;
+    }
 }
