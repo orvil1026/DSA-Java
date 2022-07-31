@@ -16,6 +16,7 @@ public class NextLexicographical {
                 result.append('a');
             }else{
                 char ch = (char)((str.charAt(i) + 1));
+
                 result.append(ch);
             }
 
