@@ -1,5 +1,6 @@
 package com.tcs.strings;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RemoveDuplicates {
@@ -11,24 +12,18 @@ public class RemoveDuplicates {
     static String removeDuplicates(String str1){
 
         String result = "";
-        StringBuilder str = new StringBuilder(str1);
+        ArrayList<String> list = new ArrayList();
 
-        for(int i=0; i<str.length(); i++){
+        for(int i=0; i<str1.length(); i++){
             int count = 0;
-            char ch = str.charAt(i);
-            for(int j=0; j< str.length(); j++){
-                if( ch == str.charAt(j)){
-                    count += 1;
-                }
+            char ch = str1.charAt(i);
+
+            if(!list.contains(String.valueOf(ch))){
+               list.add(String.valueOf(ch));
             }
 
-            if(count == 1){
-
-                result += ch;
-
-            }
         }
 
-        return result;
+        return list.toString();
     }
 }
