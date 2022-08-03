@@ -5,5 +5,6 @@ public class Demo {
         String hello = "hel";
         String world = "hel";
         System.out.println(hello.equals(world));
+        System.out.println(world.indexOf(hello.charAt(0)));
     }
 }
