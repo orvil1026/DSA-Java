@@ -1,23 +1,38 @@
 package com.company;
 
-public class Main {
+import java.util.*;
 
-    public static void main(String[] args) {
-	// write your code here
+public class Main{
+	
 
-        for(int i=97; i<97+26; i++){
-            char a = (char) i;
-            System.out.println(a);
-        }
+	public static void main(String[] args){
 
-        String sentence = "Hello world";
+		StringBuilder sb = new StringBuilder();
 
-        for(int i=0; i<sentence.length(); i++){
-            char n = sentence.charAt(i);
-            System.out.println(n);
-        }
+		sb.append("OrvilDsilva");
+
+		System.out.println(sb);
 
 
-//        System.out.println((char)97);
-    }
+		System.out.println(sb.charAt(4));
+
+		System.out.println(sb.indexOf("D"));
+
+
+		System.out.println("Size"+ sb.length());
+
+		System.out.println(sb.insert(5," "));
+
+		System.out.println(sb.replace(6,7, "d"));
+
+
+		System.out.println(sb.delete(6,sb.length()));	
+
+
+	}
+
+
+
+
+
 }
